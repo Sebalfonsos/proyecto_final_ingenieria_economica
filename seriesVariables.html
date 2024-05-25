@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Series variables</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand">AMORTIZACIÓN, CAPITALIZACIÓN Y CRITERIOS DE EVALUACION DE PROYECTOS</a>
+
+            <div class="" id="navbarResponsive">
+
+                <a class="navbar-brand ml-4">Lucia Arroyo - Sebastián Sierra</a>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/post-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Series Variables</h1>
+                        <!-- <h2 class="subheading">Problems look mighty small from 150 miles up</h2> -->
+                        <!-- <span class="meta">
+                                Posted by
+                                <a href="#!">Start Bootstrap</a>
+                                on August 24, 2023
+                            </span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <p>
+                        Las series variables son una herramienta estadística utilizada para analizar y predecir el
+                        comportamiento de una variable que cambia con el tiempo o bajo diferentes condiciones. Son
+                        esenciales en economía, Se emplea para liquidar deudas o acumular fondos a corto, mediano, largo
+                        plazo o indefinidamente. Cada flujo sigue una regla específica, variando en una cantidad fija o
+                        un porcentaje en relación al flujo anterior, fenómeno conocido como Gradiente. <br><br>
+
+                        Las usamos en escenarios de la vida diaria donde podemos encontrar que no siempre las cuotas son
+                        fijas. Por ejemplo al adquirir una vivienda se puede pactar el pago con cuotas variables que van
+                        aumentando o cuotas variables que van disminuyendo.
+
+                    <h2>Tipos de gradientes</h2>
+                    <ol>
+                        <li><b>Gradiente lineal creciente:</b> En un gradiente lineal creciente, los flujos de efectivo
+                            aumentan de forma constante en cada período.</li>
+
+                        <li><b>Gradiente lineal decreciente:</b> En un gradiente lineal decreciente, los flujos de
+                            efectivo disminuyen de forma constante en cada período.</li>
+
+                        <li><b>Gradiente geométrico creciente:</b> En un gradiente geométrico creciente, los flujos de
+                            efectivo aumentan a una tasa(%) constante.</li>
+
+                        <li><b>Gradiente geométrico decreciente:</b> En un gradiente geométrico decreciente, los flujos
+                            de efectivo disminuyen a una tasa(%) constante.</li>
+
+                    </ol>
+                    </p>
+
+
+                    <h4>Formula valor presente en una gradiente lineal creciente</h4>
+                    <p>
+                        VP = A &times;
+                        <math>
+                            <mrow>
+                                <mo>[</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mn>1</mn>
+                                                <mo>+</mo>
+                                                <mi>i</mi>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>n</mn>
+                                        </msup>
+                                        <mo>-</mo>
+                                        <mn>1</mn>
+                                    </mrow>
+                                    <mrow>
+                                        <mi>i</mi>
+                                        <mo>&times;</mo>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mn>1</mn>
+                                                <mo>+</mo>
+                                                <mi>i</mi>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>n</mn>
+                                        </msup>
+                                    </mrow>
+                                </mfrac>
+                                <mo>]</mo>
+                            </mrow>
+                        </math>
+                        +
+                        <math>
+                            <mrow>
+                                <mfrac>
+                                    <mi>G</mi>
+                                    <msup>
+                                        <mrow>
+                                            <mi>i</mi>
+                                        </mrow>
+                                    </msup>
+                                </mfrac>
+                                &times;
+                                <mo>[</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mn>1</mn>
+                                                <mo>+</mo>
+                                                <mi>i</mi>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>n</mn>
+                                        </msup>
+                                        <mo>-</mo>
+                                        <mn>1</mn>
+                                    </mrow>
+                                    <mrow>
+                                        <mi>i</mi>
+                                        <mo>&times;</mo>
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mn>1</mn>
+                                                <mo>+</mo>
+                                                <mi>i</mi>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mn>n</mn>
+                                        </msup>
+                                    </mrow>
+                                </mfrac>
+                                <mo>-</mo>
+                                <mfrac>
+                                    <mi>n</mi>
+                                    <mrow>
+
+                                        <msup>
+                                            <mrow>
+                                                <mo>(</mo>
+                                                <mn>1</mn>
+                                                <mo>+</mo>
+                                                <mi>i</mi>
+                                                <mo>)</mo>
+                                            </mrow>
+                                            <mi>n</mi>
+                                        </msup>
+
+                                    </mrow>
+                                </mfrac>
+
+                                <mo>]</mo>
+                            </mrow>
+                        </math>
+                    </p>
+
+
+                    <ul>
+                        <li>VP: Valor presente</li>
+
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>G</mi>
+                                </mrow>
+                            </math>: Valor Gradiente
+                        </li>
+
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>A</mi>
+                                </mrow>
+                            </math>: Monto de la primera couta
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </math>: Valor de la tasa de interés por periodo.
+
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>n</mi>
+                                </mrow>
+                            </math>: Numero total de periodos.
+
+                        </li>
+                    </ul>
+
+
+                    <h4>Formula valor final en una gradiente lineal creciente</h4>
+
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mi>V</mi>
+                        <mi>F</mi>
+                        <mo>=</mo>
+                        <mi>A</mi>
+                        <mo>&#xD7;</mo>
+                        <mrow data-mjx-texclass="INNER">
+                            <mo data-mjx-texclass="OPEN">[</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mo stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo>+</mo>
+                                    <mi>i</mi>
+                                    <msup>
+                                        <mo stretchy="false">)</mo>
+                                        <mi>n</mi>
+                                    </msup>
+                                    <mo>&#x2212;</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                                <mi>i</mi>
+                            </mfrac>
+                            <mo data-mjx-texclass="CLOSE">]</mo>
+                        </mrow>
+                        <mo>+</mo>
+                        <mfrac>
+                            <mi>G</mi>
+                            <mi>i</mi>
+                        </mfrac>
+                        <mo>&#xD7;</mo>
+                        <mo>[</mo>
+                        <mfrac>
+                            <mrow>
+                                <mo stretchy="false">(</mo>
+                                <mn>1</mn>
+                                <mo>+</mo>
+                                <mi>i</mi>
+                                <msup>
+                                    <mo stretchy="false">)</mo>
+                                    <mi>n</mi>
+                                </msup>
+                                <mo>&#x2212;</mo>
+                                <mn>1</mn>
+                            </mrow>
+                            <mi>i</mi>
+                        </mfrac>
+                        <mo>&#x2212;</mo>
+                        <mi>n</mi>
+                        <mo>]</mo>
+                    </math>
+
+
+                    <ul>
+                        <li>VF: Valor final</li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>G</mi>
+                                </mrow>
+                            </math>: Valor Gradiente
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>A</mi>
+                                </mrow>
+                            </math>: Monto de la primera cuota
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </math>: Valor de la tasa de interés por periodo.
+
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>n</mi>
+                                </mrow>
+                            </math>: Numero total de periodos.
+
+                        </li>
+                    </ul>
+
+                    <h4>Formula para calcular el monto de la primera cuota en una gradiente lineal creciente</h4>
+
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mi>A</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mi>V</mi>
+                                <mi>F</mi>
+                                <mo>&#x2212;</mo>
+                                <mfrac>
+                                    <mi>G</mi>
+                                    <mi>i</mi>
+                                </mfrac>
+                                <mo>&#xD7;</mo>
+                                <mrow data-mjx-texclass="INNER">
+                                    <mo data-mjx-texclass="OPEN">[</mo>
+                                    <mfrac>
+                                        <mrow>
+                                            <mo stretchy="false">(</mo>
+                                            <mn>1</mn>
+                                            <mo>+</mo>
+                                            <mi>i</mi>
+                                            <msup>
+                                                <mo stretchy="false">)</mo>
+                                                <mi>n</mi>
+                                            </msup>
+                                            <mo>&#x2212;</mo>
+                                            <mn>1</mn>
+                                        </mrow>
+                                        <mi>i</mi>
+                                    </mfrac>
+                                    <mo>&#x2212;</mo>
+                                    <mi>n</mi>
+                                    <mo data-mjx-texclass="CLOSE">]</mo>
+                                </mrow>
+                            </mrow>
+                            <mrow>
+                                <mo>[</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <mo stretchy="false">(</mo>
+                                        <mn>1</mn>
+                                        <mo>+</mo>
+                                        <mi>i</mi>
+                                        <msup>
+                                            <mo stretchy="false">)</mo>
+                                            <mi>n</mi>
+                                        </msup>
+                                        <mo>&#x2212;</mo>
+                                        <mn>1</mn>
+                                    </mrow>
+                                    <mi>i</mi>
+                                </mfrac>
+                                <mo>]</mo>
+                            </mrow>
+                        </mfrac>
+                    </math>
+
+                    <ul>
+                        <li>VF: Valor final</li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>G</mi>
+                                </mrow>
+                            </math>: Valor Gradiente
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>A</mi>
+                                </mrow>
+                            </math>: Monto de la primera cuota
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </math>: Valor de la tasa de interés por periodo.
+
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>n</mi>
+                                </mrow>
+                            </math>: Numero total de periodos.
+
+                        </li>
+                    </ul>
+
+                    <h4>Formula para calcular valor de la cuota en n </h4>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <msub>
+                            <mi>C</mi>
+                            <mi>n</mi>
+                        </msub>
+                        <mrow>
+                            
+                            <mo>=</mo>
+                            <mi>A</mi>
+                            <mo>+</mo>
+                            <mo stretchy="false">(</mo>
+                            <mi>n</mi>
+                            <mo>-</mo>
+                            <mn>1</mn>
+                            <mo stretchy="false">)</mo>
+                            <mo>*</mo>
+                            <mi>G</mi>
+                        </mrow>
+                    </math>
+
+                    <ul>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>C</mi>
+                                </mrow>
+                            </math>: Valor cuota en el periodo 
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>n</mi>
+                                </mrow>
+                            </math>
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>G</mi>
+                                </mrow>
+                            </math>: Valor gradiente
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>A</mi>
+                                </mrow>
+                            </math>: Valor de la primera cuota
+                        </li>
+                       
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>n</mi>
+                                </mrow>
+                            </math>: Numero del periodo a calcular
+
+                        </li>
+                    </ul>
+
+
+                    <h4>Formula del Monto de Cada Pago Periódico en una Anualidad Vencida usando presente</h4>
+
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" class="mb-3">
+                        <mrow>
+                            <mi>A</mi>
+                            <mo>=</mo>
+                            <mi>VP</mi>
+                            <mo>×</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mi>i</mi>
+                                    <mo>×</mo>
+                                    <mo stretchy="false">(</mo>
+                                    <msup>
+                                        <mrow>
+                                            <mn>1</mn>
+                                            <mo>+</mo>
+                                            <mi>i</mi>
+                                            <mo stretchy="false">)</mo>
+                                        </mrow>
+
+                                        <mi>n</mi>
+                                    </msup>
+                                </mrow>
+                                <mrow>
+                                    <mo stretchy="false">(</mo>
+                                    <msup>
+                                        <mrow>
+                                            <mn>1</mn>
+                                            <mo>+</mo>
+                                            <mi>i</mi>
+                                            <mo stretchy="false">)</mo>
+                                        </mrow>
+
+                                        <mi>n</mi>
+                                    </msup>
+                                    <mo>-</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+
+                    <ul>
+                        <li>VP: Valor presente</li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>A</mi>
+                                </mrow>
+                            </math>: Monto de cada pago periodico
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </math>: Valor de la tasa de interés por periodo.
+
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>n</mi>
+                                </mrow>
+                            </math>: Numero total de periodos.
+
+                        </li>
+                    </ul>
+
+                    <h4>Formula numero periodos usando Valor presente</h4>
+
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" class="mb-3">
+                        <mrow>
+                            <mi>n</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mi>Log</mi>
+                                    <mo>⁡</mo>
+                                    <mo stretchy="false">(</mo>
+                                    <mi>A</mi>
+                                    <mo stretchy="false">)</mo>
+                                    <mo>-</mo>
+                                    <mi>Log</mi>
+                                    <mo stretchy="false">(⁡</mo>
+                                    <mi>A</mi>
+                                    <mo>-</mo>
+                                    <mo stretchy="false">(</mo>
+                                    <mi>i</mi>
+                                    <mo>×</mo>
+                                    <mi>VP</mi>
+                                    <mo stretchy="false">)</mo>
+                                    <mo stretchy="false">)</mo>
+                                </mrow>
+                                <mrow>
+                                    <mi>Log</mi>
+                                    <mo>⁡</mo>
+                                    <mo stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo>+</mo>
+                                    <mi>i</mi>
+                                    <mo stretchy="false">)</mo>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+
+                    <ul>
+                        <li>VP: Valor presente</li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>A</mi>
+                                </mrow>
+                            </math>: Monto de cada pago periodico
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </math>: Valor de la tasa de interés por periodo.
+
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>n</mi>
+                                </mrow>
+                            </math>: Numero total de periodos.
+
+                        </li>
+                    </ul>
+
+                    <h4>Formula valor futuro para anualidades anticipadas</h4>
+
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" class="mb-3">
+                        <mrow>
+                            <mi>VF</mi>
+                            <mo>=</mo>
+                            <mi>A</mi>
+                            <mo>×</mo>
+                            <mo stretchy="false">(</mo>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <mi>i</mi>
+                            <mo stretchy="false">)</mo>
+                            <mo>×</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mo stretchy="false">(</mo>
+                                    <msup>
+                                        <mrow>
+                                            <mn>1</mn>
+                                            <mo>+</mo>
+                                            <mi>i</mi>
+                                            <mo stretchy="false">)</mo>
+                                        </mrow>
+
+                                        <mi>n</mi>
+                                    </msup>
+                                    <mo>-</mo>
+                                    <mn>1</mn>
+
+                                </mrow>
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+
+                    <ul>
+                        <li>VF: Valor futuro</li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>A</mi>
+                                </mrow>
+                            </math>: Monto de cada pago periodico
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </math>: Valor de la tasa de interés por periodo.
+
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>n</mi>
+                                </mrow>
+                            </math>: Numero total de periodos.
+
+                        </li>
+                    </ul>
+
+                    <h4>Formula anualidad para anualidad anticipada usando valor futuro</h4>
+
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" class="mb-3">
+                        <mrow>
+                            <mi>A</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mi>VF</mi>
+                                </mrow>
+                                <mrow>
+                                    <mo stretchy="false">[</mo>
+                                    <mfrac>
+                                        <mrow>
+                                            <mo stretchy="false">(</mo>
+                                            <mn>1</mn>
+                                            <mo>+</mo>
+                                            <mi>i</mi>
+                                            <mo stretchy="false">)</mo>
+                                            <mo>×</mo>
+                                            <mo stretchy="false">(</mo>
+                                            <msup>
+                                                <mrow>
+                                                    <mn>1</mn>
+                                                    <mo>+</mo>
+                                                    <mi>i</mi>
+                                                    <mo stretchy="false">)</mo>
+                                                </mrow>
+
+                                                <mi>n</mi>
+                                            </msup>
+                                            <mo>-</mo>
+                                            <mn>1</mn>
+
+                                        </mrow>
+                                        <mrow>
+                                            <mi>i</mi>
+                                        </mrow>
+                                    </mfrac>
+                                    <mo stretchy="false">]</mo>
+                                </mrow>
+                            </mfrac>
+                        </mrow>
+                    </math>
+
+                    <ul>
+                        <li>VF: Valor futuro</li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>A</mi>
+                                </mrow>
+                            </math>: Monto de cada pago periodico
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </math>: Valor de la tasa de interés por periodo.
+
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>n</mi>
+                                </mrow>
+                            </math>: Numero total de periodos.
+
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2023</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
