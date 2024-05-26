@@ -18,6 +18,11 @@
         rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- script propio -->
+    <script src="js/seriesUniformes/calculadorasAnualidades.js"></script>
 </head>
 
 <body>
@@ -68,7 +73,10 @@
                         <li><b>Anualidad Anticipada:</b> Los pagos se realizan al comienzo de cada periodo. Esto puede
                             resultar en una acumulación de intereses diferente a la de las anualidades vencidas.</li>
 
-                        <li><b>Anualidad Diferida:</b> Calcula el valor presente o futuro de pagos periódicos iguales que comienzan después de un período de gracia. Es útil cuando los flujos de efectivo no inician de inmediato. Durante el período de gracia, no se realizan pagos, pero los intereses pueden acumularse.</li>
+                        <li><b>Anualidad Diferida:</b> Calcula el valor presente o futuro de pagos periódicos iguales
+                            que comienzan después de un período de gracia. Es útil cuando los flujos de efectivo no
+                            inician de inmediato. Durante el período de gracia, no se realizan pagos, pero los intereses
+                            pueden acumularse.</li>
 
                     </ol>
                     </p>
@@ -131,6 +139,8 @@
 
                         </li>
                     </ul>
+                    <button class="btn btn-primary" onclick="calcValorFuturoAnualidadVencida()">Abrir
+                        Calculadora VF</button>
 
 
                     <h4>Formula del Monto de Cada Pago Periódico en una Anualidad Vencida usando valor final</h4>
@@ -198,6 +208,8 @@
                         </li>
                     </ul>
 
+                    <button class="btn btn-primary" onclick="calcMontoPagoPeriodicoAnualidadVencida()">Abrir
+                        Calculadora de A</button>
                     <h4>Formula numero periodos en anualidad vencida</h4>
 
                     <math xmlns="http://www.w3.org/1998/Math/MathML" class="mb-3">
@@ -259,6 +271,8 @@
 
                         </li>
                     </ul>
+                    <button class="btn btn-primary" onclick="calcNumeroPeriodosAnualidadVencida()">Abrir
+                        Calculadora de n</button>
 
                     <h4>Formula valor presente en anualidad vencida</h4>
 
@@ -331,8 +345,10 @@
                         </li>
                     </ul>
 
+                    <button class="btn btn-primary" onclick="calcValorPresenteAnualidadVencida()">Abrir
+                        Calculadora de VP</button>
 
-                    <h4>Formula del Monto de Cada Pago Periódico en una Anualidad Vencida usando presente</h4>
+                    <h4>Formula del Monto de Cada Pago Periódico en una Anualidad Vencida usando valor presente</h4>
 
                     <math xmlns="http://www.w3.org/1998/Math/MathML" class="mb-3">
                         <mrow>
@@ -401,7 +417,8 @@
 
                         </li>
                     </ul>
-
+                    <button class="btn btn-primary" onclick="calcMontoPagoPeriodicoAnualidadVencidaVP()">Abrir
+                        Calculadora de A</button>
                     <h4>Formula numero periodos usando Valor presente</h4>
 
                     <math xmlns="http://www.w3.org/1998/Math/MathML" class="mb-3">
@@ -467,6 +484,8 @@
                         </li>
                     </ul>
 
+                    <button class="btn btn-primary" onclick="calcNumeroPeriodosAnualidadVencidaVP()">Abrir
+                        Calculadora de n</button>
                     <h4>Formula valor futuro para anualidades anticipadas</h4>
 
                     <math xmlns="http://www.w3.org/1998/Math/MathML" class="mb-3">
@@ -531,6 +550,9 @@
 
                         </li>
                     </ul>
+
+                    <button class="btn btn-primary" onclick="calcValorFuturoAnualidadAnticipada()">Abrir
+                        Calculadora de VF</button>
 
                     <h4>Formula anualidad para anualidad anticipada usando valor futuro</h4>
 
@@ -604,48 +626,51 @@
                         </li>
                     </ul>
 
+                    <button class="btn btn-primary" onclick="calcAnualidadAnticipadaVF()">Abrir
+                        Calculadora de A</button>
+
                     <h4>Formula Valor presente para anualidad diferida</h4>
 
-                    <math xmlns="http://www.w3.org/1998/Math/MathML" >
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <mi>V</mi>
                         <mi>P</mi>
                         <mo>=</mo>
                         <mfrac>
-                          <mrow>
-                            <mi>A</mi>
-                            <mo>&#xD7;</mo>
-                            <mrow data-mjx-texclass="INNER">
-                              <mo data-mjx-texclass="OPEN">(</mo>
-                              <mn>1</mn>
-                              <mo>&#x2212;</mo>
-                              <mo stretchy="false">(</mo>
-                              <mn>1</mn>
-                              <mo>+</mo>
-                              <mi>i</mi>
-                              <msup>
-                                <mo stretchy="false">)</mo>
-                                <mrow data-mjx-texclass="ORD">
-                                  <mo>&#x2212;</mo>
-                                  <mi>n</mi>
+                            <mrow>
+                                <mi>A</mi>
+                                <mo>&#xD7;</mo>
+                                <mrow data-mjx-texclass="INNER">
+                                    <mo data-mjx-texclass="OPEN">(</mo>
+                                    <mn>1</mn>
+                                    <mo>&#x2212;</mo>
+                                    <mo stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo>+</mo>
+                                    <mi>i</mi>
+                                    <msup>
+                                        <mo stretchy="false">)</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo>&#x2212;</mo>
+                                            <mi>n</mi>
+                                        </mrow>
+                                    </msup>
+                                    <mo data-mjx-texclass="CLOSE">)</mo>
                                 </mrow>
-                              </msup>
-                              <mo data-mjx-texclass="CLOSE">)</mo>
                             </mrow>
-                          </mrow>
-                          <mrow>
-                            <mi>i</mi>
-                            <mo>&#xD7;</mo>
-                            <mo stretchy="false">(</mo>
-                            <mn>1</mn>
-                            <mo>+</mo>
-                            <mi>i</mi>
-                            <msup>
-                              <mo stretchy="false">)</mo>
-                              <mi>m</mi>
-                            </msup>
-                          </mrow>
+                            <mrow>
+                                <mi>i</mi>
+                                <mo>&#xD7;</mo>
+                                <mo stretchy="false">(</mo>
+                                <mn>1</mn>
+                                <mo>+</mo>
+                                <mi>i</mi>
+                                <msup>
+                                    <mo stretchy="false">)</mo>
+                                    <mi>m</mi>
+                                </msup>
+                            </mrow>
                         </mfrac>
-                      </math>
+                    </math>
 
                     <ul>
                         <li>VP: Valor presente</li>
@@ -682,35 +707,38 @@
                         </li>
                     </ul>
 
+                    <button class="btn btn-primary" onclick="calcValorPresenteAnualidadDiferida()">Abrir
+                        Calculadora de VP</button>
+
                     <h4>Formula Valor futuro para anualidad diferida</h4>
 
-                    <math xmlns="http://www.w3.org/1998/Math/MathML" >
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <mi>V</mi>
                         <mi>F</mi>
                         <mo>=</mo>
                         <mi>A</mi>
                         <mrow data-mjx-texclass="INNER">
-                          <mo data-mjx-texclass="OPEN">(</mo>
-                          <mfrac>
-                            <mrow data-mjx-texclass="ORD">
-                              <mo stretchy="false">(</mo>
-                              <mn>1</mn>
-                              <mo>+</mo>
-                              <mi>i</mi>
-                              <msup>
-                                <mo stretchy="false">)</mo>
-                                <mi>n</mi>
-                              </msup>
-                              <mo>&#x2212;</mo>
-                              <mn>1</mn>
-                            </mrow>
-                            <mrow data-mjx-texclass="ORD">
-                              <mi>i</mi>
-                            </mrow>
-                          </mfrac>
-                          <mo data-mjx-texclass="CLOSE">)</mo>
+                            <mo data-mjx-texclass="OPEN">(</mo>
+                            <mfrac>
+                                <mrow data-mjx-texclass="ORD">
+                                    <mo stretchy="false">(</mo>
+                                    <mn>1</mn>
+                                    <mo>+</mo>
+                                    <mi>i</mi>
+                                    <msup>
+                                        <mo stretchy="false">)</mo>
+                                        <mi>n</mi>
+                                    </msup>
+                                    <mo>&#x2212;</mo>
+                                    <mn>1</mn>
+                                </mrow>
+                                <mrow data-mjx-texclass="ORD">
+                                    <mi>i</mi>
+                                </mrow>
+                            </mfrac>
+                            <mo data-mjx-texclass="CLOSE">)</mo>
                         </mrow>
-                      </math>
+                    </math>
 
                     <ul>
                         <li>VF: Valor futuro</li>
@@ -729,7 +757,7 @@
                             </math>: Valor de la tasa de interés por periodo.
 
                         </li>
-                      
+
                         <li>
                             <math xmlns="http://www.w3.org/1998/Math/MathML">
                                 <mrow>
@@ -739,6 +767,8 @@
 
                         </li>
                     </ul>
+                    <button class="btn btn-primary" onclick="calcValorFuturoAnualidadDiferida()">Abrir
+                        Calculadora de VF</button>
 
                 </div>
             </div>
