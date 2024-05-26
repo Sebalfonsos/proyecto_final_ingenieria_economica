@@ -18,7 +18,13 @@
         rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- script propio -->
+    <script src="js/evaluacionProyectos/calculadorasEvaluacionProyectos.js"></script>
 </head>
+
+
 
 <body>
     <!-- Navigation-->
@@ -85,7 +91,7 @@
 
 
                     <h4>Formula VPN</h4>
-                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <mi>V</mi>
                         <mi>P</mi>
                         <mi>N</mi>
@@ -122,6 +128,9 @@
                         <li>VPN: Valor presente neto</li>
 
                     </ul>
+
+                    <button class="btn btn-primary" onclick="calcularVPN()">Abrir
+                        Calculadora VPN</button>
 
                     <h4>Formula T.O.</h4>
                     <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -215,40 +224,42 @@
                         <li>VPN: Valor presente neto</li>
 
                     </ul>
-
+                    <button class="btn btn-primary" onclick="calcularTO()">Abrir
+                        Calculadora T.O.</button>
                     <h4>Formula relacion Costo/Beneficio</h4>
-                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <mi>B</mi>
                         <mrow data-mjx-texclass="ORD">
-                          <mo>/</mo>
+                            <mo>/</mo>
                         </mrow>
                         <mi>C</mi>
                         <mo>=</mo>
                         <mfrac>
-                          <mrow>
-                            <mo data-mjx-texclass="OP">&#x2211;</mo>
-                            <mi>B</mi>
-                            <mi>e</mi>
-                            <mi>n</mi>
-                            <mi>e</mi>
-                            <mi>f</mi>
-                            <mi>i</mi>
-                            <mi>c</mi>
-                            <mi>i</mi>
-                            <mi>o</mi>
-                            <mi>s</mi>
-                          </mrow>
-                          <mrow>
-                            <mi>C</mi>
-                            <mi>o</mi>
-                            <mi>s</mi>
-                            <mi>t</mi>
-                            <mi>o</mi>
-                          </mrow>
+                            <mrow>
+                                <mo data-mjx-texclass="OP">&#x2211;</mo>
+                                <mi>B</mi>
+                                <mi>e</mi>
+                                <mi>n</mi>
+                                <mi>e</mi>
+                                <mi>f</mi>
+                                <mi>i</mi>
+                                <mi>c</mi>
+                                <mi>i</mi>
+                                <mi>o</mi>
+                                <mi>s</mi>
+                            </mrow>
+                            <mrow>
+                                <mi>C</mi>
+                                <mi>o</mi>
+                                <mi>s</mi>
+                                <mi>t</mi>
+                                <mi>o</mi>
+                            </mrow>
                         </mfrac>
-                      </math>
-
-                   
+                    </math>
+                    <br><br>
+                    <button class="btn btn-primary" onclick="calcRelacionCostoBeneficio()">Abrir
+                        Calculadora B/C</button>
 
 
                 </div>
