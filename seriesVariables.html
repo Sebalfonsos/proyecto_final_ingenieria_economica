@@ -18,6 +18,10 @@
         rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- script propio -->
+    <script src="js/seriesVariables/calculadoraGradientes.js"></script>
 </head>
 
 <body>
@@ -156,7 +160,7 @@
                                     </msup>
                                 </mrow>
                             </mfrac>
-                            <mo data-mjx-texclass="CLOSE">]</mo>
+                            
                         </mrow>
                         <mo>&#x2212;</mo>
                         <mfrac>
@@ -172,6 +176,7 @@
                                 </msup>
                             </mrow>
                         </mfrac>
+                        <mo data-mjx-texclass="CLOSE">]</mo>
                     </math>
 
 
@@ -210,6 +215,8 @@
 
                         </li>
                     </ul>
+                    <button class="btn btn-primary" onclick="calcValorPresenteGradienteLinealCreciente()">Abrir
+                        Calculadora VP</button>
 
 
                     <h4>1.2 Formula valor futuro en una gradiente lineal creciente</h4>
@@ -300,6 +307,9 @@
 
                         </li>
                     </ul>
+
+                    <button class="btn btn-primary" onclick="calcValorFuturoGradienteLineal()">Abrir
+                        Calculadora VF</button>
 
                     <h4>1.3 Formula para calcular el monto de la primera cuota en una gradiente lineal creciente</h4>
 
@@ -394,6 +404,8 @@
                         </li>
                     </ul>
 
+                    <button class="btn btn-primary" onclick="calcPrimeraCuotaGradienteLineal()">Abrir
+                        Calculadora VF</button>
                     <h4>1.4 Formula para calcular valor de la cuota en n en una gradiente lineal creciente </h4>
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <msub>
@@ -452,6 +464,9 @@
 
                         </li>
                     </ul>
+
+                    <button class="btn btn-primary" onclick="calcCuotaGradienteLineal()">Abrir
+                        Calculadora C</button>
 
 
                     <h4>2.1 Formula valor presente en una gradiente lineal decreciente</h4>
@@ -526,7 +541,7 @@
                                     </msup>
                                 </mrow>
                             </mfrac>
-                            <mo data-mjx-texclass="CLOSE">]</mo>
+                            
                         </mrow>
                         <mo>&#x2212;</mo>
                         <mfrac>
@@ -542,6 +557,7 @@
                                 </msup>
                             </mrow>
                         </mfrac>
+                        <mo data-mjx-texclass="CLOSE">]</mo>
                     </math>
 
                     <ul>
@@ -579,6 +595,9 @@
 
                         </li>
                     </ul>
+
+                    <button class="btn btn-primary" onclick="calcValorPresenteGradienteDecreciente()">Abrir
+                        Calculadora VP</button>
 
                     <h4>2.2 Formula valor futuro en una gradiente lineal decreciente</h4>
 
@@ -669,6 +688,8 @@
                         </li>
                     </ul>
 
+                    <button class="btn btn-primary" onclick="calcValorFuturoGradienteDecreciente()">Abrir
+                        Calculadora VF</button>
                     <h4>2.3 Formula para calcular el monto de la primera cuota en una gradiente lineal decreciente</h4>
 
                     <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -762,6 +783,8 @@
                         </li>
                     </ul>
 
+                    <button class="btn btn-primary" onclick="calcMontoPrimeraCuotaGradienteDecreciente()">Abrir
+                        Calculadora A</button>
                     <h4>2.4 Formula para calcular valor de la cuota en n en una gradiente lineal decreciente</h4>
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <msub>
@@ -820,6 +843,9 @@
 
                         </li>
                     </ul>
+
+                    <button class="btn btn-primary" onclick="calcValorCuotaGradienteDecreciente()">Abrir
+                        Calculadora C</button>
 
                     <h4>3.1 Formula para calcular valor presente en gradiente geometrico creciente</h4>
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -925,6 +951,8 @@
                         </li>
                     </ul>
 
+                    <button class="btn btn-primary" onclick="calcValorPresenteGradienteGeometricoCreciente()">Abrir
+                        Calculadora VP</button>
                     <h4>3.2 Formula para calcular valor futuro en gradiente geometrico creciente</h4>
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <mrow>
@@ -1013,7 +1041,8 @@
 
                         </li>
                     </ul>
-
+                    <button class="btn btn-primary" onclick="calcValorFuturoGradienteGeometricoCreciente()">Abrir
+                        Calculadora VF</button>
                     <h4>3.3 Formula para calcular valor de la primera cuota en gradiente geometrico creciente</h4>
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <mrow>
@@ -1104,7 +1133,8 @@
 
                         </li>
                     </ul>
-
+                    <button class="btn btn-primary" onclick="calcValorPrimeraCuotaGradienteGeometricoCreciente()">Abrir
+                        Calculadora A</button>
                     <h4>3.4 Formula para calcular valor de la cuota n en gradiente geometrico creciente</h4>
 
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1178,7 +1208,8 @@
 
                         </li>
                     </ul>
-
+                    <button class="btn btn-primary" onclick="calcValorCuotaGradienteGeometricoCreciente()">Abrir
+                        Calculadora C</button>
                     <h4>4.1 Formula para calcular valor presente en gradiente geometrico decreciente</h4>
                     <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
                         <mi>V</mi>
@@ -1278,6 +1309,9 @@
                         </li>
                     </ul>
 
+                    <button class="btn btn-primary" onclick="calcValorPresenteGradienteGeometricoDecreciente()">Abrir
+                        Calculadora VP</button>
+
                     <h4>4.2 Formula para calcular valor futuro en gradiente geometrico decreciente</h4>
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <mrow>
@@ -1366,7 +1400,8 @@
 
                         </li>
                     </ul>
-
+                    <button class="btn btn-primary" onclick="calcValorFuturoGradienteGeometricoDecreciente()">Abrir
+                        Calculadora VF</button>
                     <h4>4.3 Formula para calcular valor de la primera cuota en gradiente geometrico decreciente</h4>
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <mrow>
@@ -1466,7 +1501,8 @@
 
                         </li>
                     </ul>
-
+                    <button class="btn btn-primary" onclick="calcValorPrimeraCuotaGradienteGeometricoDecreciente()">Abrir
+                        Calculadora A</button>
                     <h4>4.4 Formula para calcular valor de la cuota n en gradiente geometrico decreciente</h4>
 
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -1540,6 +1576,9 @@
 
                         </li>
                     </ul>
+
+                    <button class="btn btn-primary" onclick="calcValorCuotaPeriodoGradienteGeometricoDecreciente()">Abrir
+                        Calculadora C</button>
 
                 </div>
             </div>
