@@ -948,3 +948,126 @@ function calcValorFuturoAnualidadDiferida() {
 }
 
 
+function calcAnualidadAnualidadDiferida() {
+    Swal.fire({
+        title: 'Calculadora de Anualidades',
+        html: `
+            <h4>Formula Anualidad para Anualidad Diferida</h4>
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mi>A</mi>
+                <mo>=</mo>
+                <mfrac>
+                    <mrow>
+                        <mi>V</mi>
+                        <mi>P</mi>
+                        <mo>&#xD7;</mo>
+                        <mo stretchy="false">(</mo>
+                        <mn>1</mn>
+                        <mo>+</mo>
+                        <mi>i</mi>
+                        <msup>
+                            <mo stretchy="false">)</mo>
+                            <mi>m</mi>
+                        </msup>
+                    </mrow>
+                    <mfrac>
+                        <mrow>
+                            <mn>1</mn>
+                            <mo>&#x2212;</mo>
+                            <mo stretchy="false">(</mo>
+                            <mn>1</mn>
+                            <mo>+</mo>
+                            <mi>i</mi>
+                            <msup>
+                                <mo stretchy="false">)</mo>
+                                <mrow data-mjx-texclass="ORD">
+                                    <mo>&#x2212;</mo>
+                                    <mi>n</mi>
+                                </mrow>
+                            </msup>
+                        </mrow>
+                        <mi>i</mi>
+                    </mfrac>
+                </mfrac>
+            </math>
+
+            <ul>
+                <li>VP: Valor presente</li>
+                <li>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>A</mi>
+                        </mrow>
+                    </math>: Monto de cada pago periódico
+                </li>
+                <li>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>i</mi>
+                        </mrow>
+                    </math>: Valor de la tasa de interés por período.
+                </li>
+                <li>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>m</mi>
+                        </mrow>
+                    </math>: Periodo de gracia
+                </li>
+                <li>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>n</mi>
+                        </mrow>
+                    </math>: Número total de períodos.
+                </li>
+            </ul>
+
+            <div class="mb-3">
+                <label for="vp" class="form-label">Valor presente (VP):</label>
+                <input type="number" class="form-control" id="vp" step="any">
+            </div>
+
+            <div class="mb-3">
+                <label for="i" class="form-label">Tasa de interés por período (i):</label>
+                <input type="number" class="form-control" id="i" step="any">
+            </div>
+
+            <div class="mb-3">
+                <label for="m" class="form-label">Período de gracia (m):</label>
+                <input type="number" class="form-control" id="m" step="any">
+            </div>
+
+            <div class="mb-3">
+                <label for="n" class="form-label">Número total de períodos (n):</label>
+                <input type="number" class="form-control" id="n" step="any">
+            </div>
+        `,
+        showCancelButton: true,
+        confirmButtonText: 'Calcular',
+        preConfirm: () => {
+            const vp = parseFloat(document.getElementById('vp').value);
+            const i = parseFloat(document.getElementById('i').value);
+            const m = parseFloat(document.getElementById('m').value);
+            const n = parseFloat(document.getElementById('n').value);
+
+            if (isNaN(vp) || isNaN(i) || isNaN(m) || isNaN(n) || vp <= 0 || i <= 0 || m <= 0 || n <= 0) {
+                Swal.showValidationMessage('Por favor, ingrese valores válidos para realizar los cálculos.');
+                return false;
+            }
+
+            const A = vp * ((1 + i) ** m) / (((1 - (1 + i) ** -n) / i));
+            return A.toFixed(2);
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Resultado',
+                html: `Anualidad Calculada: ${result.value}`,
+                icon: 'success'
+            });
+        }
+    });
+}
+
+
