@@ -154,101 +154,105 @@ function calcRelacionCostoBeneficio() {
     });
 }
 
+// Inicializamos el contador en 2 para FN1 y FN2
 
 function calcularTO() {
+    let contadorFlujos = 1;
     Swal.fire({
         title: 'Calculadora de Valor Presente Neto (VPN) con Tasa de Oportunidad (T.O.)',
         html: `
             <h4>Fórmula T.O.</h4>
             <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                <mi>V</mi>
-                <mi>P</mi>
-                <msub>
-                    <mi>N</mi>
-                    <mrow data-mjx-texclass="ORD">
-                        <mi>T</mi>
-                        <mo>.</mo>
-                        <mi>O</mi>
-                    </mrow>
-                </msub>
-                <mo>=</mo>
-                <mo>&#x2212;</mo>
-                <mi>P</mi>
-                <mo>+</mo>
-                <mfrac>
-                    <mrow>
-                        <mi>F</mi>
-                        <mi>N</mi>
-                        <msub>
-                            <mi>E</mi>
-                            <mn>1</mn>
-                        </msub>
-                    </mrow>
-                    <mrow>
-                        <mo stretchy="false">(</mo>
-                        <mn>1</mn>
-                        <mo>+</mo>
-                        <mi>T</mi>
-                        <mo>.</mo>
-                        <mi>O</mi>
-                        <msup>
-                            <mo stretchy="false">)</mo>
-                            <mn>1</mn>
-                        </msup>
-                    </mrow>
-                </mfrac>
-                <mo>+</mo>
-                <mfrac>
-                    <mrow>
-                        <mi>F</mi>
-                        <mi>N</mi>
-                        <msub>
-                            <mi>E</mi>
-                            <mn>2</mn>
-                        </msub>
-                    </mrow>
-                    <mrow>
-                        <mo stretchy="false">(</mo>
-                        <mn>1</mn>
-                        <mo>+</mo>
-                        <mi>T</mi>
-                        <mo>.</mo>
-                        <mi>O</mi>
-                        <msup>
-                            <mo stretchy="false">)</mo>
-                            <mn>2</mn>
-                        </msup>
-                    </mrow>
-                </mfrac>
-                <mo>+</mo>
-                <mo>&#x22EF;</mo>
-                <mo>+</mo>
-                <mfrac>
-                    <mrow>
-                        <mi>F</mi>
-                        <mi>N</mi>
-                        <msub>
-                            <mi>E</mi>
-                            <mi>n</mi>
-                        </msub>
-                    </mrow>
-                    <mrow>
-                        <mo stretchy="false">(</mo>
-                        <mn>1</mn>
-                        <mo>+</mo>
-                        <mi>T</mi>
-                        <mo>.</mo>
-                        <mi>O</mi>
-                        <msup>
-                            <mo stretchy="false">)</mo>
-                            <mi>n</mi>
-                        </msup>
-                    </mrow>
-                </mfrac>
+                <!-- Fórmula -->
             </math>
 
             <ul>
-                <li>VPN: Valor Presente Neto</li>
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+            <mi>V</mi>
+            <mi>P</mi>
+            <msub>
+                <mi>N</mi>
+                <mrow data-mjx-texclass="ORD">
+                    <mi>T</mi>
+                    <mo>.</mo>
+                    <mi>O</mi>
+                </mrow>
+            </msub>
+            <mo>=</mo>
+            <mo>&#x2212;</mo>
+            <mi>P</mi>
+            <mo>+</mo>
+            <mfrac>
+                <mrow>
+                    <mi>F</mi>
+                    <mi>N</mi>
+                    <msub>
+                        <mi>E</mi>
+                        <mn>1</mn>
+                    </msub>
+                </mrow>
+                <mrow>
+                    <mo stretchy="false">(</mo>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mi>T</mi>
+                    <mo>.</mo>
+                    <mi>O</mi>
+                    <msup>
+                        <mo stretchy="false">)</mo>
+                        <mn>1</mn>
+                    </msup>
+                </mrow>
+            </mfrac>
+            <mo>+</mo>
+            <mfrac>
+                <mrow>
+                    <mi>F</mi>
+                    <mi>N</mi>
+                    <msub>
+                        <mi>E</mi>
+                        <mn>2</mn>
+                    </msub>
+                </mrow>
+                <mrow>
+                    <mo stretchy="false">(</mo>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mi>T</mi>
+                    <mo>.</mo>
+                    <mi>O</mi>
+                    <msup>
+                        <mo stretchy="false">)</mo>
+                        <mn>2</mn>
+                    </msup>
+                </mrow>
+            </mfrac>
+            <mo>+</mo>
+            <mo>&#x22EF;</mo>
+            <mo>+</mo>
+            <mfrac>
+                <mrow>
+                    <mi>F</mi>
+                    <mi>N</mi>
+                    <msub>
+                        <mi>E</mi>
+                        <mi>n</mi>
+                    </msub>
+                </mrow>
+                <mrow>
+                    <mo stretchy="false">(</mo>
+                    <mn>1</mn>
+                    <mo>+</mo>
+                    <mi>T</mi>
+                    <mo>.</mo>
+                    <mi>O</mi>
+                    <msup>
+                        <mo stretchy="false">)</mo>
+                        <mi>n</mi>
+                    </msup>
+                </mrow>
+            </mfrac>
+        </math>
             </ul>
 
             <div class="mb-3">
@@ -257,50 +261,49 @@ function calcularTO() {
             </div>
 
             <div class="mb-3">
-                <label for="FN1" class="form-label">Flujo de efectivo neto para el período 1 (FN1):</label>
-                <input type="number" class="form-control" id="FN1" step="any">
-            </div>
-
-            <div class="mb-3">
-                <label for="FN2" class="form-label">Flujo de efectivo neto para el período 2 (FN2):</label>
-                <input type="number" class="form-control" id="FN2" step="any">
-            </div>
-
-            <!-- Agrega más campos según sea necesario para los flujos de efectivo adicionales -->
-
-            <div class="mb-3">
                 <label for="T" class="form-label">Tasa de oportunidad (T):</label>
                 <input type="number" class="form-control" id="T" step="any">
             </div>
 
-            <div class="mb-3">
-                <label for="O" class="form-label">Número de oportunidades (O):</label>
-                <input type="number" class="form-control" id="O" step="1">
+           
+
+            <div id="contenedorFN">
+            <label for="FN1" class="form-label">Flujo de efectivo neto para el período 1 (FN1):</label>
+            <input type="number" class="form-control" id="FN1" step="any">
             </div>
+
+            
+
+            <!-- Botón para agregar más campos de flujo de efectivo neto -->
+            <button class="btn btn-secondary" id="agregarFlujo">Agregar Flujo de Efectivo</button>
         `,
         showCancelButton: true,
         confirmButtonText: 'Calcular',
         preConfirm: () => {
             const P = parseFloat(document.getElementById('P').value);
-            const FN1 = parseFloat(document.getElementById('FN1').value);
-            const FN2 = parseFloat(document.getElementById('FN2').value);
-            // Agrega más variables para los flujos de efectivo adicionales según sea necesario
             const T = parseFloat(document.getElementById('T').value);
-            const O = parseInt(document.getElementById('O').value);
+            // const O = parseInt(document.getElementById('O').value);
 
-            if (isNaN(P) || isNaN(FN1) || isNaN(FN2) || isNaN(T) || isNaN(O) || P < 0 || O < 1) {
-                Swal.showValidationMessage('Por favor, ingrese valores válidos para realizar los cálculos.');
-                return false;
+            // Almacenar los flujos de efectivo neto ingresados por el usuario en un array
+            const flujos = [];
+            for (let i = 1; i <= contadorFlujos; i++) {
+                const FN = parseFloat(document.getElementById(`FN${i}`).value);
+                if (isNaN(FN)) {
+                    Swal.showValidationMessage('Por favor, ingrese valores válidos para los flujos de efectivo.');
+                    return false;
+                }
+                flujos.push(FN);
             }
 
+            // Calcular el VPN para cada flujo de efectivo neto y sumarlos
             let VPN = -P;
-            VPN += FN1 / Math.pow((1 + T * O), 1);
-            VPN += FN2 / Math.pow((1 + T * O), 2);
-            // Agrega más líneas según sea necesario para los flujos de efectivo adicionales
+            for (let i = 0; i < flujos.length; i++) {
+                VPN += flujos[i] / Math.pow((1 + T), i + 1);
+            }
 
             return VPN.toFixed(2);
         }
-        
+
     }).then((result) => {
         if (result.isConfirmed) {
             Swal.fire({
@@ -310,5 +313,35 @@ function calcularTO() {
             });
         }
     });
+
+    // Función para agregar más campos de flujo de efectivo neto
+    document.getElementById('agregarFlujo').addEventListener('click', () => {
+        contadorFlujos++;
+        const divFlujo = document.createElement('div');
+        divFlujo.classList.add('mb-3');
+        divFlujo.innerHTML = `
+            <label for="FN${contadorFlujos}" class="form-label">Flujo de efectivo neto para el período ${contadorFlujos} (FN${contadorFlujos}):</label>
+            <input type="number" class="form-control" id="FN${contadorFlujos}" step="any">
+            <!-- <button class="btn btn-danger eliminarFn" data-id="${contadorFlujos}">Eliminar</button> -->
+        `;
+        document.getElementById('contenedorFN').appendChild(divFlujo);
+
+        // Agregar evento para eliminar el campo de flujo de efectivo neto
+        document.querySelector(`.eliminarFn[data-id="${contadorFlujos}"]`).addEventListener('click', (event) => {
+            const btnEliminar = event.target;
+            const divFlujo = btnEliminar.parentNode;
+            divFlujo.parentNode.removeChild(divFlujo); // Eliminar el div que contiene el flujo de efectivo neto
+            contadorFlujos--;
+        });
+
+       
+
+
+    });
+
 }
+
+
+
+
 
