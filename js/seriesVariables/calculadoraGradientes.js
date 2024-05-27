@@ -545,7 +545,7 @@ function calcCuotaGradienteLineal() {
         if (result.isConfirmed) {
             Swal.fire({
                 title: 'Resultado',
-                html: `Valor de la Cuota en el Período ${n} Calculado: ${result.value}`,
+                html: `Valor de la Cuota Calculado: ${result.value}`,
                 icon: 'success'
             });
         }
@@ -815,10 +815,7 @@ function calcValorFuturoGradienteDecreciente() {
                 </li>
             </ul>
 
-            <div class="mb-3">
-                <label for="vf" class="form-label">Valor Futuro (VF):</label>
-                <input type="number" class="form-control" id="vf" step="any">
-            </div>
+            
 
             <div class="mb-3">
                 <label for="a" class="form-label">Monto de la primera cuota (A):</label>
@@ -843,18 +840,20 @@ function calcValorFuturoGradienteDecreciente() {
         showCancelButton: true,
         confirmButtonText: 'Calcular',
         preConfirm: () => {
-            const vf = parseFloat(document.getElementById('vf').value);
+           
             const a = parseFloat(document.getElementById('a').value);
             const g = parseFloat(document.getElementById('g').value);
             const i = parseFloat(document.getElementById('i').value);
             const n = parseFloat(document.getElementById('n').value);
 
-            if (isNaN(vf) || isNaN(a) || isNaN(g) || isNaN(i) || isNaN(n) || vf <= 0 || a <= 0 || g <= 0 || i <= 0 || n <= 0) {
+            if ( isNaN(a) || isNaN(g) || isNaN(i) || isNaN(n) || a <= 0 || g <= 0 || i <= 0 || n <= 0) {
                 Swal.showValidationMessage('Por favor, ingrese valores válidos para realizar los cálculos.');
                 return false;
             }
 
-            const VF = vf * (((1 + i) ** n) / i - n - g / i * ((1 + i) ** n - 1) / i);
+            // const VF = a * ((((1 + i) ** n) / i) - g / i * ((((1 + i) ** n) - 1) / i) - n);
+            const VF = a * ((((1 + i) ** n) - 1) / i) - (g / i) * (((((1 + i) ** n) - 1) / i) - n);
+
             return VF.toFixed(2);
         }
     }).then((result) => {
@@ -1230,7 +1229,7 @@ function calcValorPresenteGradienteGeometricoCreciente() {
             </div>
 
             <div class="mb-3">
-                <label for="i" class="form-label">Tasa de interés:</label>
+                <label for="i" class="form-label">Tasa de interés (%):</label>
                 <input type="number" class="form-control" id="i" step="any">
             </div>
         `,
@@ -1363,7 +1362,7 @@ function calcValorFuturoGradienteGeometricoCreciente() {
             </div>
 
             <div class="mb-3">
-                <label for="i" class="form-label">Tasa de interés:</label>
+                <label for="i" class="form-label">Tasa de interés(%):</label>
                 <input type="number" class="form-control" id="i" step="any">
             </div>
         `,
@@ -1498,7 +1497,7 @@ function calcValorPrimeraCuotaGradienteGeometricoCreciente() {
             </div>
 
             <div class="mb-3">
-                <label for="i" class="form-label">Tasa de interés:</label>
+                <label for="i" class="form-label">Tasa de interés(%):</label>
                 <input type="number" class="form-control" id="i" step="any">
             </div>
         `,
@@ -1615,10 +1614,7 @@ function calcValorCuotaGradienteGeometricoCreciente() {
                 <input type="number" class="form-control" id="j" step="any">
             </div>
 
-            <div class="mb-3">
-                <label for="i" class="form-label">Tasa de interés:</label>
-                <input type="number" class="form-control" id="i" step="any">
-            </div>
+            
         `,
         showCancelButton: true,
         confirmButtonText: 'Calcular',
@@ -1632,7 +1628,7 @@ function calcValorCuotaGradienteGeometricoCreciente() {
                 return false;
             }
 
-            const Cn = A * (1 + J) ** (n - 1);
+            const Cn = A * (1 + J/100) ** (n - 1);
             return Cn.toFixed(2);
         }
     }).then((result) => {
@@ -1672,7 +1668,7 @@ function calcValorPresenteGradienteGeometricoDecreciente() {
                             <mo>&#x2212;</mo>
                             <mo stretchy="false">(</mo>
                             <mn>1</mn>
-                            <mo>+</mo>
+                            <mo>-</mo>
                             <mi>J</mi>
                             <msup>
                                 <mo stretchy="false">)</mo>
@@ -1758,7 +1754,7 @@ function calcValorPresenteGradienteGeometricoDecreciente() {
             </div>
 
             <div class="mb-3">
-                <label for="i" class="form-label">Tasa de interés:</label>
+                <label for="i" class="form-label">Tasa de interés(%):</label>
                 <input type="number" class="form-control" id="i" step="any">
             </div>
         `,
@@ -1775,7 +1771,7 @@ function calcValorPresenteGradienteGeometricoDecreciente() {
                 return false;
             }
 
-            const VP = A * (((1 + i) ** n - (1 + J) ** n) / ((J + i) * ((1 + i) ** n)));
+            const VP = A * ((Math.pow(1 + i/100, n) - Math.pow(1 - J/100, n)) / ((J + i)/100 * Math.pow(1 + i/100, n)));
             return VP.toFixed(2);
         }
     }).then((result) => {
@@ -1898,7 +1894,7 @@ function calcValorFuturoGradienteGeometricoDecreciente() {
             </div>
 
             <div class="mb-3">
-                <label for="i" class="form-label">Tasa de interés:</label>
+                <label for="i" class="form-label">Tasa de interés(%):</label>
                 <input type="number" class="form-control" id="i" step="any">
             </div>
         `,
@@ -1915,7 +1911,7 @@ function calcValorFuturoGradienteGeometricoDecreciente() {
                 return false;
             }
 
-            const VF = A * (((1 + i) ** n - (1 - J) ** n) / ((J + i) * ((1 + i) ** n)));
+            const VF = A * (((1 + i/100) ** n - (1 - J/100) ** n) / ((J + i)/100));
             return VF.toFixed(2);
         }
     }).then((result) => {
@@ -2049,7 +2045,7 @@ function calcValorPrimeraCuotaGradienteGeometricoDecreciente() {
             </div>
 
             <div class="mb-3">
-                <label for="i" class="form-label">Tasa de interés:</label>
+                <label for="i" class="form-label">Tasa de interés(%):</label>
                 <input type="number" class="form-control" id="i" step="any">
             </div>
         `,
@@ -2066,7 +2062,7 @@ function calcValorPrimeraCuotaGradienteGeometricoDecreciente() {
                 return false;
             }
 
-            const A = VP * ((J + i) * ((1 + i) ** n) / (((1 + i) ** n) - ((1 - J) ** n)));
+            const A = VP * ((J/100 + i/100) * ((1 + i/100) ** n) / (((1 + i/100) ** n) - ((1 - J/100) ** n)));
             return A.toFixed(2);
         }
     }).then((result) => {
@@ -2179,7 +2175,7 @@ function calcValorCuotaPeriodoGradienteGeometricoDecreciente() {
                 return false;
             }
 
-            const Cn = A * (1 - J) ** (n - 1);
+            const Cn = A * (1 - J/100) ** (n - 1);
             return Cn.toFixed(2);
         }
     }).then((result) => {
