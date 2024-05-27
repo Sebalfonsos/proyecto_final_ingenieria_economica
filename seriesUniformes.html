@@ -70,6 +70,9 @@
                     <ol>
                         <li><b>Anualidad Vencida:</b> Los pagos se realizan al final de cada periodo. Este
                             es el tipo más común de anualidad.</li>
+
+                        <a href="excels\seriesUniformes\Ejemplos Anualidades Vencidas Sebastián.xlsx"
+                            class="btn btn-primary">Descargar excel ejemplos Anualidades Vencidas</a>
                         <li><b>Anualidad Anticipada:</b> Los pagos se realizan al comienzo de cada periodo. Esto puede
                             resultar en una acumulación de intereses diferente a la de las anualidades vencidas.</li>
 
@@ -629,6 +632,165 @@
                     <button class="btn btn-primary" onclick="calcAnualidadAnticipadaVF()">Abrir
                         Calculadora de A</button>
 
+                    <h4>Formula VP para anualidad anticipada </h4>
+
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mi>V</mi>
+                        <mi>P</mi>
+                        <mo>=</mo>
+                        <mi>A</mi>
+                        <mo>&#xD7;</mo>
+                        <mo stretchy="false">(</mo>
+                        <mn>1</mn>
+                        <mo>+</mo>
+                        <mi>i</mi>
+                        <mo stretchy="false">)</mo>
+                        <mo>&#xD7;</mo>
+                        <mfrac>
+                            <mrow>
+                                <mo stretchy="false">(</mo>
+                                <mn>1</mn>
+                                <mo>+</mo>
+                                <mi>i</mi>
+                                <msup>
+                                    <mo stretchy="false">)</mo>
+                                    <mi>n</mi>
+                                </msup>
+                                <mo>&#x2212;</mo>
+                                <mn>1</mn>
+                            </mrow>
+                            <mrow>
+                                <mi>i</mi>
+                                <mo>&#xD7;</mo>
+                                <mo stretchy="false">(</mo>
+                                <mn>1</mn>
+                                <mo>+</mo>
+                                <mi>i</mi>
+                                <msup>
+                                    <mo stretchy="false">)</mo>
+                                    <mi>n</mi>
+                                </msup>
+                            </mrow>
+                        </mfrac>
+                    </math>
+
+                    <ul>
+                        <li>VF: Valor futuro</li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>A</mi>
+                                </mrow>
+                            </math>: Monto de cada pago periodico
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </math>: Valor de la tasa de interés por periodo.
+
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>n</mi>
+                                </mrow>
+                            </math>: Numero total de periodos.
+
+                        </li>
+                    </ul>
+
+                    <button class="btn btn-primary" onclick="calcVPAnualidadAnticipada()">Abrir
+                        Calculadora de VP</button>
+
+                    <h4>Formula A para anualidad anticipada usando VP </h4>
+
+                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                        <mi>A</mi>
+                        <mo>=</mo>
+                        <mfrac>
+                            <mrow>
+                                <mi>V</mi>
+                                <mi>P</mi>
+                            </mrow>
+                            <mrow>
+                                <mo stretchy="false">(</mo>
+                                <mn>1</mn>
+                                <mo>+</mo>
+                                <mi>i</mi>
+                                <mo stretchy="false">)</mo>
+                                <mo>&#xD7;</mo>
+                                <mfrac>
+                                    <mrow data-mjx-texclass="INNER">
+                                        <mo data-mjx-texclass="OPEN">(</mo>
+                                        <mo stretchy="false">(</mo>
+                                        <mn>1</mn>
+                                        <mo>+</mo>
+                                        <mi>i</mi>
+                                        <msup>
+                                            <mo stretchy="false">)</mo>
+                                            <mi>n</mi>
+                                        </msup>
+                                        <mo>&#x2212;</mo>
+                                        <mn>1</mn>
+                                        <mo data-mjx-texclass="CLOSE">)</mo>
+                                    </mrow>
+                                    <mrow>
+                                        <mi>i</mi>
+                                        <mo>&#xD7;</mo>
+                                        <mrow data-mjx-texclass="INNER">
+                                            <mo data-mjx-texclass="OPEN">(</mo>
+                                            <mo stretchy="false">(</mo>
+                                            <mn>1</mn>
+                                            <mo>+</mo>
+                                            <mi>i</mi>
+                                            <msup>
+                                                <mo stretchy="false">)</mo>
+                                                <mrow data-mjx-texclass="ORD">
+                                                    <mi>n</mi>
+
+                                                </mrow>
+                                            </msup>
+                                           
+                                            <mo data-mjx-texclass="CLOSE">)</mo>
+                                        </mrow>
+                                    </mrow>
+                                </mfrac>
+                            </mrow>
+                        </mfrac>
+                    </math>
+
+                    <ul>
+                        <li>VP: Valor presente</li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>A</mi>
+                                </mrow>
+                            </math>: Monto de cada pago periodico
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>i</mi>
+                                </mrow>
+                            </math>: Valor de la tasa de interés por periodo.
+
+                        </li>
+                        <li>
+                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                <mrow>
+                                    <mi>n</mi>
+                                </mrow>
+                            </math>: Numero total de periodos.
+
+                        </li>
+                    </ul>
+
+                    <button class="btn btn-primary" onclick="calcMontoAnualidadAnticipada()">Abrir
+                        Calculadora de A</button>
+
                     <h4>Formula Valor presente para anualidad diferida</h4>
 
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -858,7 +1020,7 @@
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-                    
+
                     <div class="small text-center text-muted fst-italic">Esto lo hice con IA (insomnio y ansiedad)</div>
                 </div>
             </div>
